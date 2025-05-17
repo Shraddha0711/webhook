@@ -33,7 +33,8 @@ async def stripe_webhook(request: Request):
         raise HTTPException(status_code=400, detail=str(e))
 
     # Handle the event
-    if event['type'] == 'payment_intent.succeeded':
+    # if event['type'] == 'payment_intent.succeeded':
+    if event['type'] == 'checkout.session.completed':
         session = event['data']['object']
         handle_checkout_session(session)
 
