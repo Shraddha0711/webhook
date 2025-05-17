@@ -38,7 +38,7 @@ async def stripe_webhook(request: Request):
         session = event['data']['object']
         handle_checkout_session(session)
     else:
-        print("the event type is : ", event['type')
+        print("the event type is : ", event['type'])
 
     return {"status": "success"}
 
