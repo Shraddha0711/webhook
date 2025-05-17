@@ -34,7 +34,7 @@ async def stripe_webhook(request: Request):
 
     # Handle the event
     # if event['type'] == 'payment_intent.succeeded':
-    if event['type'] == 'checkout.session.completed':
+    if event['type'] == 'invoice.paid':
         session = event['data']['object']
         handle_checkout_session(session)
 
