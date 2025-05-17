@@ -19,7 +19,8 @@ app=FastAPI()
 async def stripe_webhook(request: Request):
     payload = await request.body()
     sig_header = request.headers.get('stripe-signature')
-    endpoint_secret = 'whsec_dbc51a61bed928be0a6d60efce987c73198e5a18a72eba8d32b398373e47796a'
+    # endpoint_secret = 'whsec_dbc51a61bed928be0a6d60efce987c73198e5a18a72eba8d32b398373e47796a'
+    endpoint_secret = 'whsec_MjdtxocKXMAnafmVg88rambUP7d9sKOg'
 
     try:
         event = stripe.Webhook.construct_event(
